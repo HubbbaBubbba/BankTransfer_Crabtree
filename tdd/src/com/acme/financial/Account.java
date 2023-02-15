@@ -1,14 +1,23 @@
 package com.acme.financial;
 
-public class BankAccount {
+public abstract class Account {
 	// if we use double we need to worry about round-off error
 	// many people use BigDecimal for monetary values
 	private int balance;
+	private int accountNumber;
 	
-	public BankAccount(int startingBalance) {
+	public Account(int startingBalance) {
 		this.balance = startingBalance;
 	}
 	
+	 // Getter
+	public String getName() {
+		return name;
+	  }
+
+	 // Setter
+	  public void setName(String newName) {
+	    this.name = newName;
 	public void deposit(int amount) {
 		this.balance += amount;
 	}
@@ -21,7 +30,7 @@ public class BankAccount {
 		this.balance = this.balance - amount;
 	}
 	
-	public void transfer(int amount, BankAccount other) {
+	public void transfer(int amount, Account other) {
 		this.balance -= amount;
 		other.balance += amount;
 	}

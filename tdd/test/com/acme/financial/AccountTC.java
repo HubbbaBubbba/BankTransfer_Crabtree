@@ -7,11 +7,11 @@ import org.junit.jupiter.api.Test;
 
 import com.acme.financial.BankAccount;
 
-class BankAccountTC {
+class AccountTC {
 
 	@Test
 	void testDeposit() throws Exception {
-		BankAccount acct = new BankAccount(0);
+		Account acct = new Account(0);
 		
 		assertNotNull(acct);
 		assertEquals(0, acct.getBalance(), "balance should be 0");
@@ -22,7 +22,7 @@ class BankAccountTC {
 	}
 	@Test
 	void testWithdraw() throws Exception {
-		BankAccount acct = new BankAccount(100);
+		Account acct = new Account(100);
 		
 		assertNotNull(acct);
 		assertEquals(100, acct.getBalance(), "balance should be 100");
@@ -42,8 +42,8 @@ class BankAccountTC {
 	}
 	@Test
 	void testTransfer() throws Exception {
-		BankAccount acct = new BankAccount(100);
-		BankAccount acct2 = new BankAccount(100);
+		Account acct = new Account(100);
+		Account acct2 = new Account(100);
 		
 		assertNotNull(acct);
 		assertNotNull(acct2);
